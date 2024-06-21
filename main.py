@@ -1,8 +1,6 @@
 # Main program file
 
 # Import graphical user interface files
-from gui.window import window
+from gui.gui import window
 
 
-# Open Window
-window()
