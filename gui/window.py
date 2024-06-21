@@ -4,15 +4,22 @@
 import customtkinter
 
 
-class Window:
+def window():
+	"""
+	Window Function creates main window
+	"""
 
-	def __init__(self, root):
-		"""
-		Initialization:
+	# Create window
+	window = customtkinter.CTk()
 
-		Creates basic parts for a window.
-		"""
+	# Window title
+	window.title("Dice Roller")
 
+	# Minimum window size
+	window.minsize(600, 500)
+
+	# Run Window
+	window.mainloop()
 
 
 if __name__ == "__main__":
