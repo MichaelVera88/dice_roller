@@ -1,8 +1,7 @@
 # Creates the main window for program
 
-# Importing tkinter to get graphical user interface tools
-import tkinter
-from tkinter import ttk
+# Importing custom tkinter to get graphical user interface tools
+import customtkinter
 
 
 class Window:
@@ -14,11 +13,6 @@ class Window:
 		Creates basic parts for a window.
 		"""
 
-		# Window title
-		root.title("Dice Roller")
-
-		# Declare frame to hold content inside window
-		content = ttk.Frame(root).grid()
 
 
 if __name__ == "__main__":

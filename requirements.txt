@@ -1,2 +1,2 @@
 Libraries:
-	- Tkinter
+	- Custom Tkinter

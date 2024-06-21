@@ -1,13 +1,13 @@
 # Main program file
 
-# Importing tkinter to get graphical user interface tools
-import tkinter
+# Importing custom tkinter to get graphical user interface tools
+import customtkinter
 
 # Import graphical user interface files
 from gui.window import Window
 
 
 # Create Window
-root = tkinter.Tk()
+root = customtkinter.CTk()
 Window(root)
 root.mainloop()
