@@ -6,7 +6,9 @@ import customtkinter
 
 def window():
 	"""
-	Window Function creates main window
+	Window Function:
+	
+	Creates main window
 	"""
 
 	# Create window
