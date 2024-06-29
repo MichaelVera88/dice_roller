@@ -55,10 +55,9 @@ def settings_theme_click(value):
 		customtkinter.set_appearance_mode("Dark")
 		
 
-
 # Settings Icon
-settings_icon = customtkinter.CTkImage(light_image=Image.open("gui/images/arnold.png"), dark_image=Image.open("gui/images/arnold.png"), size=(50, 50))
-settings_button = customtkinter.CTkButton(master=window, text=None, width=50, height=50, image=settings_icon, command=settings_icon_click)
+dark_settings_icon = customtkinter.CTkImage(light_image=Image.open("gui/images/arnold.png"), dark_image=Image.open("gui/images/arnold.png"), size=(50, 50))
+settings_button = customtkinter.CTkButton(master=window, text=None, width=50, height=50, image=dark_settings_icon, command=settings_icon_click)
 settings_button.grid(row=0, column=0, padx=15, pady=15, sticky="nw")
 
 # Settings Menu Frame
