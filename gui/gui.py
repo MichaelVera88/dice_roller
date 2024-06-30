@@ -11,7 +11,7 @@ from PIL import Image
 # -------------------------------------------------
 
 # Set Custom Theme
-customtkinter.set_default_color_theme("gui/theme/custom_theme.json")
+#customtkinter.set_default_color_theme("gui/theme/custom_theme.json")
 
 # Create Window
 window = customtkinter.CTk()
@@ -36,9 +36,9 @@ def settings_icon_click():
 	Opens and closes menu for settings when settings icon is clicked
 	"""
 	if settings_menu.winfo_manager():
-		settings_menu.grid_forget()
+		settings_menu.place_forget()
 	else:
-		settings_menu.grid(row=0, column=1, padx=15, pady=15, sticky="nw")
+		settings_menu.place(relx=0, rely=0, x=95, y=15, anchor="nw")
 
 
 def settings_theme_click(value):
@@ -58,7 +58,7 @@ def settings_theme_click(value):
 # Settings Icon
 dark_settings_icon = customtkinter.CTkImage(light_image=Image.open("gui/images/arnold.png"), dark_image=Image.open("gui/images/arnold.png"), size=(50, 50))
 settings_button = customtkinter.CTkButton(master=window, text=None, width=50, height=50, image=dark_settings_icon, command=settings_icon_click)
-settings_button.grid(row=0, column=0, padx=15, pady=15, sticky="nw")
+settings_button.place(relx=0, rely=0, x=15, y=15, anchor="nw")
 
 # Settings Menu Frame
 settings_menu = customtkinter.CTkFrame(master=window)
@@ -70,6 +70,23 @@ option_theme_label.grid(row=0, column=0, padx=15, pady=15, sticky='n')
 option_theme_button = customtkinter.CTkSegmentedButton(master=settings_menu, values=["System", "Light", "Dark"], command=settings_theme_click)
 option_theme_button.grid(row=0, column=1, padx=15, pady=15, sticky="n")
 option_theme_button.set("System")
+
+# -------------------------------------------------
+
+
+
+### Dice
+# -------------------------------------------------
+
+#D20
+d20_amount_label = customtkinter.CTkLabel(master=window, text="D20", width=25, height=50)
+d20_amount_label.place(relx=1, rely=0, x=-45, y=15, anchor="ne")
+
+d20_increase_button = customtkinter.CTkButton(master=window, text="+", width=25, height=50)
+d20_increase_button.place(relx=1, rely=0, x=-15, y=15, anchor="ne")
+
+d20_decrease_button = customtkinter.CTkButton(master=window, text="-", width=25, height=50)
+d20_decrease_button.place(relx=1, rely=0, x=-85, y=15, anchor="ne")
 
 # -------------------------------------------------
 

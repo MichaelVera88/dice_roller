@@ -17,7 +17,7 @@
     "border_width": 0,
     "fg_color": "transparent",
     "hover_color": ["gray14", "gray84"],
-    "border_color": ["gray14", "gray84"],
+    "border_color": ["gray84", "gray14"],
     "text_color": ["gray14", "gray84"],
     "text_color_disabled": ["gray14", "gray84"]
   },

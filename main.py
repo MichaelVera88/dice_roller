@@ -1,7 +1,7 @@
 ### Main program file
 
-### Import graphical user interface files
-from gui.gui import window
+### Import graphical user interface file
+import gui.gui
 ### Import dice usage
 from src.dice import Dice
 
