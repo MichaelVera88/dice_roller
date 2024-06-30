@@ -71,6 +71,7 @@ option_theme_button = customtkinter.CTkSegmentedButton(master=settings_menu, val
 option_theme_button.grid(row=0, column=1, padx=15, pady=15, sticky="n")
 option_theme_button.set("System")
 
+# -------------------------------------------------
 
 
 
