@@ -78,14 +78,33 @@ option_theme_button.set("System")
 ### Dice
 # -------------------------------------------------
 
+d20_amount = 0
+
+def increase(n):
+	"""
+	Increase Function:
+
+	Increases amount of dice rolled
+	"""
+	n += 1
+
+
+def decrease(n):
+	"""
+	Decrease Function:
+
+	Decreases amount of dice rolled
+	"""
+	n -= 1
+
 #D20
-d20_amount_label = customtkinter.CTkLabel(master=window, text="D20", width=25, height=50)
+d20_amount_label = customtkinter.CTkLabel(master=window, text=d20_amount, width=25, height=50)
 d20_amount_label.place(relx=1, rely=0, x=-45, y=15, anchor="ne")
 
-d20_increase_button = customtkinter.CTkButton(master=window, text="+", width=25, height=50)
+d20_increase_button = customtkinter.CTkButton(master=window, text="+", width=25, height=50, command=increase(d20_amount))
 d20_increase_button.place(relx=1, rely=0, x=-15, y=15, anchor="ne")
 
-d20_decrease_button = customtkinter.CTkButton(master=window, text="-", width=25, height=50)
+d20_decrease_button = customtkinter.CTkButton(master=window, text="-", width=25, height=50, command=decrease(d20_amount))
 d20_decrease_button.place(relx=1, rely=0, x=-85, y=15, anchor="ne")
 
 # -------------------------------------------------
