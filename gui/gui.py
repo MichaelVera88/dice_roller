@@ -2,39 +2,7 @@
 
 import customtkinter as ctk
 from PIL import Image
-
-# Main Window
-class Window(ctk.CTk):
-	def __init__(self):
-
-		super().__init__()
-
-		self.title("Dice Roller")
-		self.geometry("600x400")
-		self.resizable(False, False)
-
-		# Settings Button
-		self.btn_settings = ctk.CTkButton(master=self, text="Settings", width=25, height=25, command=self.open_settings)
-		self.btn_settings.pack(side="left", anchor="n", padx=15, pady=15)
-
-		# Settings Menu
-		self.frame_settings = FrameSettings(master=self)
-
-		# Dice Options
-		self.frame_dice = FrameDice(master=self)
-		self.frame_dice.pack(side="right", anchor="n", padx=15, pady=15)
-
-	def open_settings(self):
-		"""
-		Open Settings Function:
-
-		Opens and closes the menu for settings with the settings button.
-		"""
-		if self.frame_settings.winfo_manager():
-			self.frame_settings.pack_forget()
-		else:	
-			self.frame_settings.pack(side="left", anchor="n", pady=15)
-
+from src.dice import Dice
 
 # Settings Menu Class
 class FrameSettings(ctk.CTkFrame):
@@ -89,15 +57,24 @@ class FrameDice(ctk.CTkFrame):
 		# Coin Buttons
 		self.coin_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=self.add_coin)
 		self.coin_add_btn.grid(row=1, column=2, padx=15, pady=15)
+		self.coin_add_btn.bind
 
 		self.coin_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=self.sub_coin)
 		self.coin_sub_btn.grid(row=1, column=0, padx=15, pady=15)
+
+	def return_coins(self):
+		"""
+		Return Coins Function:
+
+		Return total number of coins.
+		"""
+		return int(self.coin_amount)
 
 	def add_coin(self):
 		"""
 		Add Coin Function:
 
-		Increments coin amount by +1
+		Increments coin amount by +1.
 		"""
 		if self.coin_amount < 10:
 			self.coin_amount += 1
@@ -107,7 +84,7 @@ class FrameDice(ctk.CTkFrame):
 		"""
 		Sub Coin Function:
 
-		Increments coin amount by -1
+		Increments coin amount by -1.
 		"""
 		if self.coin_amount > 0:
 			self.coin_amount -= 1

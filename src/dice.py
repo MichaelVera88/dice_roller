@@ -8,8 +8,7 @@ class Dice():
 
 		self.faces = faces
 
-
-	def roll(self, n: int, long_roll: bool):
+	def roll(self, n: int, long_roll: bool) -> tuple:
 		"""
 		Roll Function:
 
