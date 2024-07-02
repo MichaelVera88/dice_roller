@@ -46,5 +46,6 @@ class Window(ctk.CTk):
 		total = coins.roll(self.frame_dice.return_coins(), True)
 		print(f"{total[0]}{total[1]}")
 
-dice_roller = Window()
-dice_roller.mainloop()
+if __name__ == "__main__":
+	dice_roller = Window()
+	dice_roller.mainloop()

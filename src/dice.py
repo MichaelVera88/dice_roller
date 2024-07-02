@@ -5,7 +5,6 @@ from random import randint
 # Dice Class
 class Dice():
 	def __init__(self, faces: int):
-
 		self.faces = faces
 
 	def roll(self, n: int, long_roll: bool) -> tuple:

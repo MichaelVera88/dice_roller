@@ -2,7 +2,6 @@
 
 import customtkinter as ctk
 from PIL import Image
-from src.dice import Dice
 
 # Settings Menu Class
 class FrameSettings(ctk.CTkFrame):
@@ -32,7 +31,6 @@ class FrameSettings(ctk.CTkFrame):
 			ctk.set_appearance_mode("Dark")
 		else:
 			ctk.set_appearance_mode("System")
-
 
 # Dice Options Class
 class FrameDice(ctk.CTkFrame):
