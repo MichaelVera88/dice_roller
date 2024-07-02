@@ -15,14 +15,14 @@ class Window(ctk.CTk):
 
 		# Settings Button
 		self.btn_settings = ctk.CTkButton(master=self, text="Settings", width=25, height=25, command=self.open_settings)
-		self.btn_settings.grid(row=0, column=0, padx=15, pady=15, sticky="nw")
+		self.btn_settings.pack(side="left", anchor="n", padx=15, pady=15)
 
 		# Settings Menu
 		self.frame_settings = FrameSettings(master=self)
 
 		# Dice Options
 		self.frame_dice = FrameDice(master=self)
-		self.frame_dice.grid(row=0, column=2, padx=15, pady=15, sticky="ne")
+		self.frame_dice.pack(side="right", anchor="n", padx=15, pady=15)
 
 	def open_settings(self):
 		"""
@@ -31,9 +31,9 @@ class Window(ctk.CTk):
 		Opens and closes the menu for settings with the settings button.
 		"""
 		if self.frame_settings.winfo_manager():
-			self.frame_settings.grid_forget()
+			self.frame_settings.pack_forget()
 		else:	
-			self.frame_settings.grid(row=0, column=1, pady=15)
+			self.frame_settings.pack(side="left", anchor="n", pady=15)
 
 
 # Settings Menu Class
