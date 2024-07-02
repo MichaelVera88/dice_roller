@@ -1,17 +1,11 @@
-### File includes structure of dice
+### Structure of dice
 
-### Importing random integer from random module
 from random import randint
 
-
-
+# Dice Class
 class Dice():
 	def __init__(self, faces: int):
-		"""
-		Initialization:
 
-		Declares faces of dice
-		"""
 		self.faces = faces
 
 
@@ -19,7 +13,7 @@ class Dice():
 		"""
 		Roll Function:
 
-		Rolls n amount of dice; Long Roll determines if addition is shown
+		Rolls n amount of dice; Long Roll determines if addition is shown.
 		"""
 		total = 0
 		addition = ""
@@ -36,8 +30,6 @@ class Dice():
 					addition += f"{rolled} + "
 
 		return addition, total
-
-
 
 if __name__ == "__main__":
 	print("Dice file")
