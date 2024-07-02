@@ -6,7 +6,9 @@ from PIL import Image
 # Main Window
 class Window(ctk.CTk):
 	def __init__(self):
+
 		super().__init__()
+
 		self.title("Dice Roller")
 		self.geometry("400x300")
 		self.resizable(False, False)
@@ -16,7 +18,7 @@ class Window(ctk.CTk):
 		self.btn_settings.grid(row=0, column=0, padx=15, pady=15, sticky="nw")
 
 		# Settings Menu
-		self.frame_settings = FrameSettings(master=self, width=50, height=100)
+		self.frame_settings = FrameSettings(master=self, width=200, height=100)
 
 	def open_settings(self):
 		"""
@@ -27,11 +29,13 @@ class Window(ctk.CTk):
 		if self.frame_settings.winfo_manager():
 			self.frame_settings.grid_forget()
 		else:	
-			self.frame_settings.grid(row=0, column=1, padx=15, pady=15)
+			self.frame_settings.grid(row=0, column=1, pady=15)
+
 
 # Settings Menu Class
 class FrameSettings(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
+		
 		super().__init__(master, **kwargs)
 
 
