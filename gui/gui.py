@@ -72,14 +72,46 @@ class FrameDice(ctk.CTkFrame):
 
 		super().__init__(master, **kwargs)
 
-		self.temp_label = ctk.CTkLabel(master=self, text="0", width=15, height=15)
-		self.temp_label.grid(row=0, column=1, padx=15, pady=15)
+		# Dice Amounts
+		self.coin_amount = 0
 
-		self.temp_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=15)
-		self.temp_add_btn.grid(row=0, column=2, padx=(0, 15), pady=15)
+		# Frame Title
+		self.dice_label = ctk.CTkLabel(master=self, text="DICE")
+		self.dice_label.grid(row=0, column=1, padx=15, pady=(5, 0))
 
-		self.temp_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=15)
-		self.temp_sub_btn.grid(row=0, column=0, padx=(15, 0), pady=15)
+		# Coin Labels
+		self.coin_label = ctk.CTkLabel(master=self, text="COIN (1-2)")
+		self.coin_label.grid(row=1, column=1, pady=(20, 0))
+
+		self.coin_amount_label = ctk.CTkLabel(master=self, text=str(self.coin_amount))
+		self.coin_amount_label.grid(row=1, column=1, pady=(0, 20))
+
+		# Coin Buttons
+		self.coin_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=self.add_coin)
+		self.coin_add_btn.grid(row=1, column=2, padx=15, pady=15)
+
+		self.coin_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=self.sub_coin)
+		self.coin_sub_btn.grid(row=1, column=0, padx=15, pady=15)
+
+	def add_coin(self):
+		"""
+		Add Coin Function:
+
+		Increments coin amount by +1
+		"""
+		if self.coin_amount < 10:
+			self.coin_amount += 1
+		self.coin_amount_label.configure(text=str(self.coin_amount))
+	
+	def sub_coin(self):
+		"""
+		Sub Coin Function:
+
+		Increments coin amount by -1
+		"""
+		if self.coin_amount > 0:
+			self.coin_amount -= 1
+		self.coin_amount_label.configure(text=str(self.coin_amount))
 
 if __name__ == "__main__":
 	print("Window file")
