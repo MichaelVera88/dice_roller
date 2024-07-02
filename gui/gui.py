@@ -18,7 +18,7 @@ class Window(ctk.CTk):
 		self.btn_settings.grid(row=0, column=0, padx=15, pady=15, sticky="nw")
 
 		# Settings Menu
-		self.frame_settings = FrameSettings(master=self, width=200, height=100)
+		self.frame_settings = FrameSettings(master=self)
 
 	def open_settings(self):
 		"""
@@ -35,9 +35,31 @@ class Window(ctk.CTk):
 # Settings Menu Class
 class FrameSettings(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
-		
+
 		super().__init__(master, **kwargs)
 
+		# Change Theme Label & Button
+		self.theme_options = ["System", "Light", "Dark"]
+
+		self.settings_theme_label = ctk.CTkLabel(master=self, text="Theme:")
+		self.settings_theme_label.grid(row=0, column=0, padx=(15, 0), pady=15)
+
+		self.settings_theme_btn = ctk.CTkSegmentedButton(master=self, values=self.theme_options, command=self.change_theme)
+		self.settings_theme_btn.grid(row=0, column=1, padx=15, pady=15)
+		self.settings_theme_btn.set(self.theme_options[0])
+
+	def change_theme(self, value):
+		"""
+		Change Theme Function:
+
+		Changes theme of program with a segmented button to light or dark mode.
+		"""
+		if value == "Light":
+			ctk.set_appearance_mode("Light")
+		elif value == "Dark":
+			ctk.set_appearance_mode("Dark")
+		else:
+			ctk.set_appearance_mode("System")
 
 if __name__ == "__main__":
 	print("Window file")
