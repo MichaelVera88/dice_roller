@@ -20,6 +20,10 @@ class Window(ctk.CTk):
 		# Settings Menu
 		self.frame_settings = FrameSettings(master=self)
 
+		# Dice Options
+		self.frame_dice = FrameDice(master=self)
+		self.frame_dice.grid(row=0, column=2, padx=15, pady=15, sticky="ne")
+
 	def open_settings(self):
 		"""
 		Open Settings Function:
@@ -60,6 +64,22 @@ class FrameSettings(ctk.CTkFrame):
 			ctk.set_appearance_mode("Dark")
 		else:
 			ctk.set_appearance_mode("System")
+
+
+# Dice Options Class
+class FrameDice(ctk.CTkFrame):
+	def __init__(self, master, **kwargs):
+
+		super().__init__(master, **kwargs)
+
+		self.temp_label = ctk.CTkLabel(master=self, text="0", width=15, height=15)
+		self.temp_label.grid(row=0, column=1, padx=15, pady=15)
+
+		self.temp_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=15)
+		self.temp_add_btn.grid(row=0, column=2, padx=(0, 15), pady=15)
+
+		self.temp_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=15)
+		self.temp_sub_btn.grid(row=0, column=0, padx=(15, 0), pady=15)
 
 if __name__ == "__main__":
 	print("Window file")
