@@ -10,7 +10,7 @@ class Window(ctk.CTk):
 		super().__init__()
 
 		self.title("Dice Roller")
-		self.geometry("400x300")
+		self.geometry("600x400")
 		self.resizable(False, False)
 
 		# Settings Button
