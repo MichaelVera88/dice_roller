@@ -1,4 +1,4 @@
-### Creates the main window and GUI for program
+### Creates the GUI elements for program
 
 import customtkinter as ctk
 from PIL import Image

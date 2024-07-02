@@ -15,18 +15,18 @@ class Window(ctk.CTk):
 
 		# Settings Button
 		self.btn_settings = ctk.CTkButton(master=self, text="Settings", width=25, height=25, command=self.open_settings)
-		self.btn_settings.pack(side="left", anchor="n", padx=15, pady=15)
+		self.btn_settings.place(x=15, y=15, anchor="nw")
 
 		# Settings Menu
 		self.frame_settings = FrameSettings(master=self)
 
 		# Dice Options
 		self.frame_dice = FrameDice(master=self)
-		self.frame_dice.pack(side="right", anchor="n", padx=15, pady=15)
+		self.frame_dice.place(x=585, y=15, anchor="ne")
 
 		# Roll Button
 		self.roll_button = ctk.CTkButton(master=self, text="ROLL", command=self.rolled)
-		self.roll_button.pack(side="bottom", anchor="s", padx=15, pady=15)
+		self.roll_button.place(x=585, y=385, anchor="se")
 
 	def open_settings(self):
 		"""
@@ -35,9 +35,9 @@ class Window(ctk.CTk):
 		Opens and closes the menu for settings with the settings button.
 		"""
 		if self.frame_settings.winfo_manager():
-			self.frame_settings.pack_forget()
+			self.frame_settings.place_forget()
 		else:	
-			self.frame_settings.pack(side="left", anchor="n", pady=15)
+			self.frame_settings.place(x=85, y=15, anchor="nw")
 
 	def rolled(self):
 		"""
