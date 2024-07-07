@@ -10,7 +10,7 @@ class Window(ctk.CTk):
 		super().__init__()
 
 		self.title("Dice Roller")
-		self.geometry("600x400")
+		self.geometry("800x600")
 		self.resizable(False, False)
 
 		# Settings Button
@@ -22,11 +22,11 @@ class Window(ctk.CTk):
 
 		# Dice Options
 		self.frame_dice = FrameDice(master=self)
-		self.frame_dice.place(x=585, y=15, anchor="ne")
+		self.frame_dice.place(x=785, y=15, anchor="ne")
 
 		# Roll Button
 		self.roll_button = ctk.CTkButton(master=self, text="ROLL", command=self.rolled)
-		self.roll_button.place(x=585, y=385, anchor="se")
+		self.roll_button.place(x=785, y=585, anchor="se")
 
 	def open_settings(self):
 		"""
