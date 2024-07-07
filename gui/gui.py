@@ -52,11 +52,24 @@ class FrameDice(ctk.CTkFrame):
 
 		# Coin Buttons
 		self.coin_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=lambda : self.add(self.coin_amount_label, coin))
-		self.coin_add_btn.grid(row=1, column=2, padx=15, pady=15)
-		self.coin_add_btn.bind
+		self.coin_add_btn.grid(row=1, column=2, padx=15, pady=5)
 
 		self.coin_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=lambda : self.sub(self.coin_amount_label, coin))
-		self.coin_sub_btn.grid(row=1, column=0, padx=15, pady=15)
+		self.coin_sub_btn.grid(row=1, column=0, padx=15, pady=5)
+
+		# d4 Labels
+		self.d4_label = ctk.CTkLabel(master=self, text=d4.name)
+		self.d4_label.grid(row=2, column=1, pady=(20,0))
+
+		self.d4_amount_label = ctk.CTkLabel(master=self, text=d4.amount)
+		self.d4_amount_label.grid(row=2, column=1, pady=(0, 20))
+
+		# d4 Buttons
+		self.d4_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=lambda : self.add(self.d4_amount_label, d4))
+		self.d4_add_btn.grid(row=2, column=2, padx=15, pady=5)
+
+		self.d4_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=lambda : self.sub(self.d4_amount_label, d4))
+		self.d4_sub_btn.grid(row=2, column=0, padx=15, pady=5)
 
 	def add(self, label, dice):
 		"""
