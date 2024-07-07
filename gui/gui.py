@@ -85,6 +85,20 @@ class FrameDice(ctk.CTkFrame):
 		self.d6_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=lambda : self.sub(self.d6_amount_label, d6))
 		self.d6_sub_btn.grid(row=3, column=0, padx=15, pady=5)
 
+		# d8 Labels
+		self.d8_label = ctk.CTkLabel(master=self, text=d8.name)
+		self.d8_label.grid(row=4, column=1, pady=(20,0))
+
+		self.d8_amount_label = ctk.CTkLabel(master=self, text=d8.amount)
+		self.d8_amount_label.grid(row=4, column=1, pady=(0, 20))
+
+		# d8 Buttons
+		self.d8_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=lambda : self.add(self.d8_amount_label, d8))
+		self.d8_add_btn.grid(row=4, column=2, padx=15, pady=5)
+
+		self.d8_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=lambda : self.sub(self.d8_amount_label, d8))
+		self.d8_sub_btn.grid(row=4, column=0, padx=15, pady=5)
+
 	def add(self, label, dice):
 		"""
 		Add Function:
