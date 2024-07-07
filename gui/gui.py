@@ -2,6 +2,7 @@
 
 import customtkinter as ctk
 from PIL import Image
+from src.dice import *
 
 # Settings Menu Class
 class FrameSettings(ctk.CTkFrame):
@@ -38,55 +39,44 @@ class FrameDice(ctk.CTkFrame):
 
 		super().__init__(master, **kwargs)
 
-		# Dice Amounts
-		self.coin_amount = 0
-
 		# Frame Title
 		self.dice_label = ctk.CTkLabel(master=self, text="DICE")
 		self.dice_label.grid(row=0, column=1, padx=15, pady=(5, 0))
 
 		# Coin Labels
-		self.coin_label = ctk.CTkLabel(master=self, text="COIN (1-2)")
+		self.coin_label = ctk.CTkLabel(master=self, text=coin.name)
 		self.coin_label.grid(row=1, column=1, pady=(20, 0))
 
-		self.coin_amount_label = ctk.CTkLabel(master=self, text=str(self.coin_amount))
+		self.coin_amount_label = ctk.CTkLabel(master=self, text=coin.amount)
 		self.coin_amount_label.grid(row=1, column=1, pady=(0, 20))
 
 		# Coin Buttons
-		self.coin_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=self.add_coin)
+		self.coin_add_btn = ctk.CTkButton(master=self, text="+", width=15, height=40, command=lambda : self.add(self.coin_amount_label, coin))
 		self.coin_add_btn.grid(row=1, column=2, padx=15, pady=15)
 		self.coin_add_btn.bind
 
-		self.coin_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=self.sub_coin)
+		self.coin_sub_btn = ctk.CTkButton(master=self, text="-", width=15, height=40, command=lambda : self.sub(self.coin_amount_label, coin))
 		self.coin_sub_btn.grid(row=1, column=0, padx=15, pady=15)
 
-	def return_coins(self):
+	def add(self, label, dice):
 		"""
-		Return Coins Function:
+		Add Function:
 
-		Return total number of coins.
+		Increments amount by +1.
 		"""
-		return int(self.coin_amount)
-
-	def add_coin(self):
-		"""
-		Add Coin Function:
-
-		Increments coin amount by +1.
-		"""
-		if self.coin_amount < 10:
-			self.coin_amount += 1
-		self.coin_amount_label.configure(text=str(self.coin_amount))
+		if dice.amount < 10:
+			dice.amount += 1
+		label.configure(text=dice.amount)
 	
-	def sub_coin(self):
+	def sub(self, label, dice):
 		"""
-		Sub Coin Function:
+		Sub Function:
 
-		Increments coin amount by -1.
+		Increments amount by -1.
 		"""
-		if self.coin_amount > 0:
-			self.coin_amount -= 1
-		self.coin_amount_label.configure(text=str(self.coin_amount))
+		if dice.amount > 0:
+			dice.amount -= 1
+		label.configure(text=dice.amount)
 
 if __name__ == "__main__":
 	print("Window file")

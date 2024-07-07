@@ -42,9 +42,7 @@ class Window(ctk.CTk):
 	def rolled(self):
 		"""
 		"""
-		coins = Dice(2)
-		total = coins.roll(self.frame_dice.return_coins(), True)
-		print(f"{total[0]}{total[1]}")
+		
 
 if __name__ == "__main__":
 	dice_roller = Window()

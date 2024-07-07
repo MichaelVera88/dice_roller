@@ -4,30 +4,43 @@ from random import randint
 
 # Dice Class
 class Dice():
-	def __init__(self, faces: int):
+	def __init__(self, name: str, faces: int, amount: int):
+		self.name = name
 		self.faces = faces
+		self.amount = amount
 
-	def roll(self, n: int, long_roll: bool) -> tuple:
+	def roll(self, long_roll: bool) -> tuple:
 		"""
 		Roll Function:
 
-		Rolls n amount of dice; Long Roll determines if addition is shown.
+		Rolls the number of dice currently in amount.
+		Long Roll determines if addition is shown.
 		"""
 		total = 0
 		addition = ""
 
-		for roll in range(n):
+		for roll in range(self.amount):
 
 			rolled = randint(1, self.faces)
 			total += rolled
 
 			if long_roll:
-				if roll == n-1:
+				if roll == self.amount-1:
 					addition += f"{rolled} = "
 				else:
 					addition += f"{rolled} + "
 
 		return addition, total
+
+# Declare Dice
+coin = Dice("coin", 2, 0)
+d4 = Dice("d4", 4, 0)
+d6 = Dice("d6", 6, 0)
+d8 = Dice("d8", 8, 0)
+d10 = Dice("d10", 10, 0)
+d12 = Dice("d12", 12, 0)
+d20 = Dice("d20", 20, 0)
+d100 = Dice("d100", 100, 0)
 
 if __name__ == "__main__":
 	print("Dice file")
