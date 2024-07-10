@@ -51,7 +51,7 @@ class Window(ctk.CTk):
 		for dice in dice_list:
 
 			if dice.amount > 0:
-				current_dice = dice.roll(True)
+				current_dice = dice.roll(self.frame_settings.show_addition())
 
 				addition += f"{dice.name}({current_dice[0]}) + "
 				total += current_dice[1]
@@ -61,8 +61,10 @@ class Window(ctk.CTk):
 
 		if total == 0:
 			print("No Dice Selected")
-		else:
+		elif self.frame_settings.show_addition() == True:
 			print(f"{addition}= {total}")
+		else:
+			print(f"{total}")
 		
 if __name__ == "__main__":
 	dice_roller = Window()

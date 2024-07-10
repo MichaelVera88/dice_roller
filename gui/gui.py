@@ -48,7 +48,8 @@ class FrameSettings(ctk.CTkFrame):
 
 		Toggles showing all addition in each dice roll.
 		"""
-		print(self.addition_option.get())
+		return self.addition_option.get()
+
 # Dice Options Class
 class FrameDice(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
