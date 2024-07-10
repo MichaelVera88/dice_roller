@@ -1,7 +1,6 @@
 ### Main program file
 
 from gui.gui import *
-from src.dice import Dice
 
 # Main Window
 class Window(ctk.CTk):
@@ -41,7 +40,29 @@ class Window(ctk.CTk):
 
 	def rolled(self):
 		"""
+		Rolled Function:
+
+		Rolls selected dice.
 		"""
+		addition = ""
+		total = 0
+		multiple_dice = 0
+
+		for dice in dice_list:
+
+			if dice.amount > 0:
+				current_dice = dice.roll(True)
+
+				addition += f"{dice.name}({current_dice[0]}) + "
+				total += current_dice[1]
+				multiple_dice += 1
+
+		addition = addition[:-2]
+
+		if total == 0:
+			print("No Dice Selected")
+		else:
+			print(f"{addition}= {total}")
 		
 
 if __name__ == "__main__":

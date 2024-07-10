@@ -26,7 +26,7 @@ class Dice():
 
 			if long_roll:
 				if roll == self.amount-1:
-					addition += f"{rolled} = "
+					addition += f"{rolled}"
 				else:
 					addition += f"{rolled} + "
 
@@ -41,6 +41,9 @@ d10 = Dice("d10", 10, 0)
 d12 = Dice("d12", 12, 0)
 d20 = Dice("d20", 20, 0)
 d100 = Dice("d100", 100, 0)
+
+# Dice List
+dice_list = [coin, d4, d6, d8, d10, d12, d20, d100]
 
 if __name__ == "__main__":
 	print("Dice file")
