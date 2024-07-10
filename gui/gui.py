@@ -14,11 +14,20 @@ class FrameSettings(ctk.CTkFrame):
 		self.theme_options = ["System", "Light", "Dark"]
 
 		self.settings_theme_label = ctk.CTkLabel(master=self, text="Theme:")
-		self.settings_theme_label.grid(row=0, column=0, padx=(15, 0), pady=15)
+		self.settings_theme_label.grid(row=0, column=0, padx=(55, 0), pady=15)
 
 		self.settings_theme_btn = ctk.CTkSegmentedButton(master=self, values=self.theme_options, command=self.change_theme)
 		self.settings_theme_btn.grid(row=0, column=1, padx=15, pady=15)
 		self.settings_theme_btn.set(self.theme_options[0])
+
+		# Show Addition
+		self.addition_option = ctk.BooleanVar(value=False)
+
+		self.settings_addition_label = ctk.CTkLabel(master=self, text="Show Addition:")
+		self.settings_addition_label.grid(row=1, column=0, padx=(15, 0), pady=15)
+
+		self.settings_addition_switch = ctk.CTkSwitch(master=self, text="", command=self.show_addition, variable=self.addition_option, onvalue=True, offvalue=False)
+		self.settings_addition_switch.grid(row=1, column=1, padx=(0, 15), pady=15)
 
 	def change_theme(self, value):
 		"""
@@ -33,6 +42,13 @@ class FrameSettings(ctk.CTkFrame):
 		else:
 			ctk.set_appearance_mode("System")
 
+	def show_addition(self):
+		"""
+		Show Addition Function:
+
+		Toggles showing all addition in each dice roll.
+		"""
+		print(self.addition_option.get())
 # Dice Options Class
 class FrameDice(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):

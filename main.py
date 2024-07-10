@@ -64,7 +64,6 @@ class Window(ctk.CTk):
 		else:
 			print(f"{addition}= {total}")
 		
-
 if __name__ == "__main__":
 	dice_roller = Window()
 	dice_roller.mainloop()
