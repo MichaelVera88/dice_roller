@@ -1,7 +1,6 @@
 ### Creates the GUI elements for program
 
 import customtkinter as ctk
-from PIL import Image
 from src.dice import *
 
 # Settings Menu Class
