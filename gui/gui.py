@@ -199,10 +199,10 @@ class FrameRoll(ctk.CTkFrame):
 		super().__init__(master, **kwargs)
 
 		# Display Addition
-		self.addition_label = ctk.CTkLabel(master=self, text="", font=("arial", 14))
+		self.addition_label = ctk.CTkLabel(master=self, text="", font=("arial", 24))
 
 		# Display Total
-		self.total_label = ctk.CTkLabel(master=self, text="", width=50, height=25, font=("arial", 28))
+		self.total_label = ctk.CTkLabel(master=self, text="", width=75, height=50, font=("arial", 48))
 		self.total_label.grid(row=1, column=0, padx=15, pady=15, sticky="s")
 		self.total_label.grid_propagate(False)
 
