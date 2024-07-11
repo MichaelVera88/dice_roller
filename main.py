@@ -12,6 +12,9 @@ class Window(ctk.CTk):
 		self.geometry("800x600")
 		self.resizable(False, False)
 
+		# Custom Theme
+		ctk.set_default_color_theme("gui/theme/green.json")
+
 		# Settings
 		self.btn_settings = ctk.CTkButton(master=self, text="Settings", width=25, height=25, command=self.open_settings)
 		self.btn_settings.place(x=15, y=15, anchor="nw")
