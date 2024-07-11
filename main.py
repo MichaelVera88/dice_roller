@@ -23,6 +23,10 @@ class Window(ctk.CTk):
 		self.frame_dice = FrameDice(master=self)
 		self.frame_dice.place(x=785, y=15, anchor="ne")
 
+		# Roll Display
+		self.roll_display = FrameRoll(master=self)
+		self.roll_display.place(x=400, y=585, anchor="s")
+
 		# Roll Button
 		self.roll_button = ctk.CTkButton(master=self, text="ROLL", command=self.rolled)
 		self.roll_button.place(x=785, y=585, anchor="se")
@@ -60,11 +64,14 @@ class Window(ctk.CTk):
 		addition = addition[:-2]
 
 		if total == 0:
-			print("No Dice Selected")
+			self.roll_display.addition_label.configure(text="No Dice Selected")
+			self.roll_display.total_label.configure(text="")
 		elif self.frame_settings.show_addition() == True:
-			print(f"{addition}= {total}")
+			self.roll_display.addition_label.configure(text=f"{addition}= ")
+			self.roll_display.total_label.configure(text=total)
 		else:
-			print(f"{total}")
+			self.roll_display.addition_label.configure(text="")
+			self.roll_display.total_label.configure(text=total)
 		
 if __name__ == "__main__":
 	dice_roller = Window()

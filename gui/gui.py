@@ -192,5 +192,21 @@ class FrameDice(ctk.CTkFrame):
 			dice.amount -= 1
 		label.configure(text=dice.amount)
 
+# Roll Display
+class FrameRoll(ctk.CTkFrame):
+	def __init__(self, master, **kwargs):
+
+		super().__init__(master, **kwargs)
+
+		# Display Addition
+		self.addition_label = ctk.CTkLabel(master=self, text="", width=400, height=100)
+		self.addition_label.grid(row=0, column=0, sticky="n")
+		self.addition_label.grid_propagate(False)
+
+		# Display Total
+		self.total_label = ctk.CTkLabel(master=self, text="", width=400, height=50)
+		self.total_label.grid(row=1, column=0, sticky="s")
+		self.total_label.grid_propagate(False)
+
 if __name__ == "__main__":
 	print("Window file")
