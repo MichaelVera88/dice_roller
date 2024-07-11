@@ -1,7 +1,6 @@
 ### Creates the GUI elements for program
 
 import customtkinter as ctk
-from re import match
 from PIL import Image
 from src.dice import *
 
