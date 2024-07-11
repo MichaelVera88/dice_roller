@@ -24,17 +24,17 @@ class Window(ctk.CTk):
 
 		# Roll Display
 		self.frame_roll_display = FrameRoll(master=self)
-		self.frame_roll_display.place(x=400, y=585, anchor="s")
+		self.frame_roll_display.place(x=400, y=500, anchor="s")
 
 		# Roll History
 		self.btn_history = ctk.CTkButton(master=self, text=">", width=10, height=25, command=self.open_history)
-		self.btn_history.place(x=15, y=345)
+		self.btn_history.place(x=15, y=275)
 
 		self.frame_roll_history = FrameHistory(master=self, width=100, height=425)
 		
 		# Roll Button
 		self.roll_button = ctk.CTkButton(master=self, text="ROLL", command=self.rolled)
-		self.roll_button.place(x=785, y=585, anchor="se")
+		self.roll_button.place(x=785, y=500, anchor="se")
 
 	def open_settings(self):
 		"""
@@ -54,11 +54,11 @@ class Window(ctk.CTk):
 		Opens and closes the frame for roll history with the history button.
 		"""
 		if self.frame_roll_history.winfo_viewable():
-			self.btn_history.place(x=15, y=345)
+			self.btn_history.place(x=15, y=275)
 			self.frame_roll_history.place_forget()
 		else:
-			self.btn_history.place(x=145, y=345)
-			self.frame_roll_history.place(x=15, y=145)
+			self.btn_history.place(x=145, y=275)
+			self.frame_roll_history.place(x=15, y=75)
 
 	def rolled(self):
 		"""
