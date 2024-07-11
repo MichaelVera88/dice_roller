@@ -57,20 +57,24 @@ class Window(ctk.CTk):
 			if dice.amount > 0:
 				current_dice = dice.roll(self.frame_settings.show_addition())
 
-				addition += f"{dice.name}({current_dice[0]}) + "
+				addition += f"{dice.name}({current_dice[0]}) \n"
 				total += current_dice[1]
 				multiple_dice += 1
 
 		addition = addition[:-2]
 
 		if total == 0:
+			self.roll_display.addition_label.grid(row=0, column=0, padx=15, pady=15, sticky="n")
 			self.roll_display.addition_label.configure(text="No Dice Selected")
-			self.roll_display.total_label.configure(text="")
+			self.roll_display.total_label.grid_forget()
 		elif self.frame_settings.show_addition() == True:
-			self.roll_display.addition_label.configure(text=f"{addition}= ")
+			self.roll_display.addition_label.grid(row=0, column=0, padx=15, pady=(15, 0), sticky="n")
+			self.roll_display.addition_label.configure(text=f"{addition}\n=")
+			self.roll_display.total_label.grid(row=1, column=0, padx=15, pady=(0, 15), sticky="s")
 			self.roll_display.total_label.configure(text=total)
 		else:
-			self.roll_display.addition_label.configure(text="")
+			self.roll_display.addition_label.grid_forget()
+			self.roll_display.total_label.grid(row=1, column=0, padx=15, pady=15, sticky="s")
 			self.roll_display.total_label.configure(text=total)
 		
 if __name__ == "__main__":
