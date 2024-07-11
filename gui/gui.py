@@ -206,5 +206,13 @@ class FrameRoll(ctk.CTkFrame):
 		self.total_label.grid(row=1, column=0, padx=15, pady=15, sticky="s")
 		self.total_label.grid_propagate(False)
 
+# Roll History
+class FrameHistory(ctk.CTkFrame):
+	def __init__(self, master, **kwargs):
+
+		super().__init__(master, **kwargs)
+
+		
+
 if __name__ == "__main__":
 	print("Window file")

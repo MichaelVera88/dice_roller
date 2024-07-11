@@ -12,11 +12,10 @@ class Window(ctk.CTk):
 		self.geometry("800x600")
 		self.resizable(False, False)
 
-		# Settings Button
+		# Settings
 		self.btn_settings = ctk.CTkButton(master=self, text="Settings", width=25, height=25, command=self.open_settings)
 		self.btn_settings.place(x=15, y=15, anchor="nw")
 
-		# Settings Menu
 		self.frame_settings = FrameSettings(master=self)
 
 		# Dice Options
@@ -24,8 +23,15 @@ class Window(ctk.CTk):
 		self.frame_dice.place(x=785, y=15, anchor="ne")
 
 		# Roll Display
-		self.roll_display = FrameRoll(master=self)
-		self.roll_display.place(x=400, y=585, anchor="s")
+		self.frame_roll_display = FrameRoll(master=self)
+		self.frame_roll_display.place(x=400, y=585, anchor="s")
+
+		# Roll History
+		self.btn_history = ctk.CTkButton(master=self, text=">", width=10, height=25)
+		self.btn_history.place(x=130, y=325)
+
+		self.frame_roll_history = FrameHistory(master=self, width=100, height=425)
+		self.frame_roll_history.place(x=15, y=125)
 
 		# Roll Button
 		self.roll_button = ctk.CTkButton(master=self, text="ROLL", command=self.rolled)
@@ -64,18 +70,18 @@ class Window(ctk.CTk):
 		addition = addition[:-2]
 
 		if total == 0:
-			self.roll_display.addition_label.grid(row=0, column=0, padx=15, pady=15, sticky="n")
-			self.roll_display.addition_label.configure(text="No Dice Selected")
-			self.roll_display.total_label.grid_forget()
+			self.frame_roll_display.addition_label.grid(row=0, column=0, padx=15, pady=15, sticky="n")
+			self.frame_roll_display.addition_label.configure(text="No Dice Selected")
+			self.frame_roll_display.total_label.grid_forget()
 		elif self.frame_settings.show_addition() == True:
-			self.roll_display.addition_label.grid(row=0, column=0, padx=15, pady=(15, 0), sticky="n")
-			self.roll_display.addition_label.configure(text=f"{addition}\n=")
-			self.roll_display.total_label.grid(row=1, column=0, padx=15, pady=(0, 15), sticky="s")
-			self.roll_display.total_label.configure(text=total)
+			self.frame_roll_display.addition_label.grid(row=0, column=0, padx=15, pady=(15, 0), sticky="n")
+			self.frame_roll_display.addition_label.configure(text=f"{addition}\n=")
+			self.frame_roll_display.total_label.grid(row=1, column=0, padx=15, pady=(0, 15), sticky="s")
+			self.frame_roll_display.total_label.configure(text=total)
 		else:
-			self.roll_display.addition_label.grid_forget()
-			self.roll_display.total_label.grid(row=1, column=0, padx=15, pady=15, sticky="s")
-			self.roll_display.total_label.configure(text=total)
+			self.frame_roll_display.addition_label.grid_forget()
+			self.frame_roll_display.total_label.grid(row=1, column=0, padx=15, pady=15, sticky="s")
+			self.frame_roll_display.total_label.configure(text=total)
 		
 if __name__ == "__main__":
 	dice_roller = Window()
