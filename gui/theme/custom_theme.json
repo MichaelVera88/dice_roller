@@ -1,0 +1,78 @@
+{
+  "CTk": {
+    "fg_color": ["gray92", "gray14"]
+  },
+  "CTkToplevel": {
+    "fg_color": ["gray92", "gray14"]
+  },
+  "CTkFrame": {
+    "corner_radius": 6,
+    "border_width": 0,
+    "fg_color": ["gray70", "gray20"],
+    "top_fg_color": ["gray81", "gray20"],
+    "border_color": ["gray65", "gray28"]
+  },
+  "CTkButton": {
+    "corner_radius": 6,
+    "border_width": 0,
+    "fg_color": ["gray80", "gray5"],
+    "hover_color": ["#0C955A", "#106A43"],
+    "border_color": ["#3E454A", "#949A9F"],
+    "text_color": ["gray1", "gray99"],
+    "text_color_disabled": ["gray78", "gray68"]
+  },
+  "CTkLabel": {
+    "corner_radius": 0,
+    "fg_color": "transparent",
+    "text_color": ["gray1", "gray99"]
+  },
+  "CTkSwitch": {
+    "corner_radius": 1000,
+    "border_width": 3,
+    "button_length": 0,
+    "fg_color": ["red", "red"],
+    "progress_color": ["green", "green"],
+    "button_color": ["gray1", "gray99"],
+    "button_hover_color": ["gray30", "gray70"],
+    "text_color": ["gray1", "gray99"],
+    "text_color_disabled": ["gray60", "gray45"]
+  },
+  "CTkScrollbar": {
+    "corner_radius": 1000,
+    "border_spacing": 4,
+    "fg_color": "transparent",
+    "button_color": ["gray55", "gray41"],
+    "button_hover_color": ["gray40", "gray53"]
+  },
+  "CTkSegmentedButton": {
+    "corner_radius": 6,
+    "border_width": 2,
+    "fg_color": ["#979DA2", "gray29"],
+    "selected_color": ["gray99", "gray1"],
+    "selected_hover_color": ["gray70", "gray20"],
+    "unselected_color": ["#979DA2", "gray29"],
+    "unselected_hover_color": ["gray70", "gray41"],
+    "text_color": ["gray1", "gray99"],
+    "text_color_disabled": ["gray78", "gray68"]
+  },
+  "CTkScrollableFrame": {
+    "label_fg_color": ["gray78", "gray23"]
+  },
+  "CTkFont": {
+    "macOS": {
+      "family": "SF Display",
+      "size": 13,
+      "weight": "normal"
+    },
+    "Windows": {
+      "family": "Roboto",
+      "size": 13,
+      "weight": "normal"
+    },
+    "Linux": {
+      "family": "Roboto",
+      "size": 13,
+      "weight": "normal"
+    }
+  }
+}
