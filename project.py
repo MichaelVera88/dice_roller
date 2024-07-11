@@ -103,6 +103,9 @@ class Window(ctk.CTk):
 
 		self.frame_roll_history.record_history(addition, total)
 		
-if __name__ == "__main__":
+def main():
 	dice_roller = Window()
 	dice_roller.mainloop()
+
+if __name__ == "__main__":
+	main()
