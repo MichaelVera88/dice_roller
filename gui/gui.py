@@ -1,6 +1,7 @@
 ### Creates the GUI elements for program
 
 import customtkinter as ctk
+from re import match
 from PIL import Image
 from src.dice import *
 
@@ -207,12 +208,38 @@ class FrameRoll(ctk.CTkFrame):
 		self.total_label.grid_propagate(False)
 
 # Roll History
-class FrameHistory(ctk.CTkFrame):
+class FrameHistory(ctk.CTkScrollableFrame):
 	def __init__(self, master, **kwargs):
 
 		super().__init__(master, **kwargs)
 
-		
+		self.text_history = ""
+
+		# History Label
+		self.history_label = ctk.CTkLabel(master=self, text=self.text_history)
+		self.history_label.pack()
+
+	def record_history(self, addition, total):
+		"""
+		Record History Function:
+
+		Takes the results from the rolled function and records them in this frame.
+		"""
+		if addition == "":
+			text = f"""
+Total: {total}\n
+-----
+"""
+			self.text_history = ''.join((text, self.text_history))
+		else:
+			text = f"""
+{addition}
+
+Total: {total}\n
+-----
+"""
+			self.text_history = ''.join((text, self.text_history))
+		self.history_label.configure(text=self.text_history)
 
 if __name__ == "__main__":
 	print("Window file")
